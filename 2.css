@@ -1,0 +1,18 @@
+.nex{
+   
+    margin-left: 15%;
+}
+.su{
+    margin-left: 15%;  
+}
+#bt{
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: none;
+    background-color: yellow;
+    color: red;
+}
+.re{
+    background-color: red;
+}

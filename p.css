@@ -1,0 +1,156 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+
+}
+.an{
+
+background-color: black;
+height: 50px;
+overflow: hidden;
+width: 100%;
+position:sticky;
+}
+.an a{
+    
+    float: right;
+    color: white;
+    /* text-align: center; */
+    /* display:inline-block; */
+    padding: 14px 30px;
+    text-decoration: none;
+
+    /* transition: 5s hover; */
+    
+}
+.an a:hover{
+    
+color: red;
+transition: 1s;
+}
+.lo{
+    color: aliceblue;
+    display:inline-block;
+    /* background-color: red; */
+    margin-top: 5px;
+    margin-left: 20px;
+    
+}
+.lo img{
+    color: rgb(182, 221, 255);
+    width: 50px;
+}
+.in{
+   width: 100%;
+   height: auto;
+}
+.sr{
+    /* display: flex; */
+}
+.h{
+ /* justify-content: center; */
+ text-align: center;
+}
+.ims{
+    display: flex;
+  flex-wrap: wrap; 
+  
+  align-items: center;
+  justify-content: center;
+ 
+  
+}
+
+.ima{
+    text-align: center;
+    
+    /* display: flex; */
+    /* padding:30px; */
+}
+.ima h4{
+    padding: 10px;
+}
+.ima button{
+    width: 80px;
+    padding: 5px;
+}
+.ima img{
+    max-width: 300PX;
+    height:300PX;
+    padding: 50px;
+    align-items: center;
+    
+}
+.btn{
+    /* display:flex; */
+    background-color: orangered;
+    border-radius: 10px;
+    border: none;
+    /* margin-top: 10px; */
+    color: white;
+}
+.ims H3{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+}
+.log{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.log img{
+    display: flex;
+    max-width: 300px;
+    width: 200px;
+    height: 150px;
+    /* /* height: 200px */
+}
+.in {
+    width: 100%;
+    text-align: center;
+    /* align-items: center; */
+    background-color: rgb(211, 247, 155);
+    
+}
+.inp{
+    padding: 20px;
+}
+.inp input,
+.inp textarea{
+    
+    padding: 10px;
+    width: 50%;
+    border-radius: 20px;
+    border: none;
+}
+.inp label{
+    text-align: center;
+    font-size:x-large;
+    /* display: block; */
+    margin-bottom: 5px;
+}
+#bt{
+    padding: 5px;
+    width: 90px;
+    border-radius: 10px;
+    background-color: aqua;
+    border: none;
+}
+.in h1{
+    padding: 10px;
+}
+.bn{
+    /* display: flex; */
+    background-color: orange;
+   /* display: inline-block; */
+   border-radius: 20PX;
+   border: none;
+    
+}
