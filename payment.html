@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .inp{
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* height: 100vh; */
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .post input{
+       padding: 5px;
+       width: 400px;
+       border-radius: 10px;
+    border: solid;
+    border-color: aquamarine;
+    }
+</style>
+<body>
+
+
+    <div class="inp">
+  <H1 style="text-align: center; font-size: 24px;">Your Address</H1><br>
+   
+  <form action="#" method="post" class="post"  id="myForm">
+   
+    <label for="username">Name</label>
+    <input type="text"  id="username" name="username" placeholder="Enter Your Name">
+    <br>
+    <label for="username">DOB</label>
+    <input type="number" placeholder="Enter your DOB"   id="username" name="username">
+     <br>
+
+    <label for="username">Number</label>
+    <input type="number" placeholder="Enter Your Mobile Number"  id="username" name="username">
+<br>
+    <label for="username">Email</label>
+    <input type="email" placeholder="Enter Your Email"  id="username" name="username">
+<br>
+    <label for="username">Address</label>
+    <input type="text" placeholder="Enter Your Address"  id="username" name="username">
+<br>
+    <label for="username">City</label>
+    <input type="text" placeholder="Enter Your City"  id="username" name="username">
+<br>
+    <label for="username">State</label>
+    <input type="text" placeholder="Enter Your State"  id="username" name="username">
+<br>
+    <label for="username">District</label>
+    <input type="text" placeholder="Enter Your District"  id="username" name="username">
+<br>
+    <label for="username">Pin Code</label>
+    <input type="text" placeholder="Enter Your Pincode"  id="username" name="username"><br><br>
+
+    <button style="background-color: orange; color: #fff; padding: 5px; border-radius: 10px; border: solid;" onclick="tvk()">Conform Order</button>
+
+  </form>
+  <p id="error-message" style="color: red; display: none;">Please complete the input box!</p>
+  <script>
+     document.getElementById('myForm').addEventListener('submit', function(event) {
+        event.preventDefault();  // Prevent form submission
+
+        var inputs = document.querySelectorAll('input');
+        var errorMessage = document.getElementById('error-message');
+        var formValid = true;
+
+        // Loop through all input elements to check if they are filled65
+        inputs.forEach(function(input) {
+            if (input.value.trim() === "") {
+                formValid = false;  // Set formValid to false if any input is empty
+            }
+        });
+
+        if (formValid) {
+            errorMessage.style.display = "none"; // Hide the error message
+            alert("Your Address Submitted!");
+        } else {
+            errorMessage.style.display = "block"; // Show the error message
+        }
+    });
+    function tvk(){
+        window.location.href = 'pay.html';
+    }
+   
+  </script>
+</div> 
+</body>
+</html>

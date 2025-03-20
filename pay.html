@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .payment-section {
+            margin: 20px;
+        }
+
+        .product-details,
+        .address-details,
+        .charges-details {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkorange;
+        }
+
+        .total-amount {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Payment Page</h1>
+
+    <div class="payment-section product-details">
+        <h2>Product Details</h2>
+        <img id="paymentProductImage" width="200" alt="Product Image">
+        <h3 id="paymentProductName"></h3>
+        <h4 id="paymentProductPrice"></h4>
+    </div>
+
+    <div class="payment-section address-details">
+        <h2>Shipping Address</h2>
+        <p id="paymentAddress"></p>
+        <p id="paymentCity"></p>
+        <p id="paymentZipCode"></p>
+    </div>
+
+    <div class="payment-section charges-details">
+        <h2>Charges</h2>
+        <p>GST (18%): ₹<span id="gstAmount"></span></p>
+        <p>Extra Charge: ₹<span id="extraCharge"></span></p>
+        <p>Sudden Shipping Charge: ₹<span id="shippingCharge"></span></p>
+    </div>
+
+    <div class="payment-section total-amount">
+        <p>Total Amount: ₹<span id="totalAmount"></span></p>
+    </div>
+
+    <button onclick="finalizePayment()">Confirm Payment</button>
+
+    <script>
+        // Retrieve the product and address details from localStorage
+        const imgSrc = localStorage.getItem('imgSrc');
+        const productName = localStorage.getItem('productName');
+        const price = parseFloat(localStorage.getItem('price')); // Convert price to a number
+        // const price = price; 
+        const address = localStorage.getItem('address');
+        const city = localStorage.getItem('city');
+        const zipCode = localStorage.getItem('zipCode');
+
+        // Display the product details on the page
+        document.getElementById('paymentProductImage').src = imgSrc;
+        document.getElementById('paymentProductName').innerText = productName;
+        document.getElementById('paymentProductPrice').innerText = "₹" + price.toFixed(2);
+
+        // Display the address details on the page
+        document.getElementById('paymentAddress').innerText = `Address: ${address}`;
+        document.getElementById('paymentCity').innerText = `City: ${city}`;
+        document.getElementById('paymentZipCode').innerText = `Zip Code: ${zipCode}`;
+
+        // Calculate GST (Assumed 18% for this example)
+        const gstPercentage = 18;
+        const gstAmount = (price * gstPercentage) / 100;
+
+        // Extra charge (fixed value, you can adjust it)
+        const extraCharge = 50; // Example extra charge
+
+        // Sudden shipping charge (can be randomized based on conditions, here I'm randomly assigning it)
+        const shippingCharge = Math.floor(Math.random() * 100) + 50; // Random charge between ₹50 to ₹150
+
+        // Total amount calculation
+        const totalAmount = price + gstAmount + extraCharge + shippingCharge;
+
+        // Display charges and total amount on the page
+        document.getElementById('gstAmount').innerText = gstAmount.toFixed(2);
+        document.getElementById('extraCharge').innerText = extraCharge;
+        document.getElementById('shippingCharge').innerText = shippingCharge;
+        document.getElementById('totalAmount').innerText = totalAmount.toFixed(2);
+
+        // Function to finalize the payment (for demo purpose, it's just an alert)
+        function finalizePayment() {
+            alert(`Payment of ₹${totalAmount.toFixed(2)} has been successfully processed!`);
+            // Add further payment integration here, e.g., using a payment gateway
+            window.location.href = 'p1.html';
+        }
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <style>
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+        .cart-item img {
+            width: 100px;
+            height: auto;
+        }
+        .cart-item button {
+            padding: 5px 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Cart</h1>
+    <div id="cartItems"></div>
+
+    <script>
+       const cartItemsContainer = document.getElementById('cartItems');
+const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function renderCart() {
+    cartItemsContainer.innerHTML = '';
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+    } else {
+        cart.forEach((item, index) => {
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('cart-item');
+            itemDiv.innerHTML = `
+                <img src="${item.imgSrc || 'default.jpg'}" alt="Product Image" onerror="this.src='fallback.jpg'">
+                <h3>${item.productName || 'Unknown Product'}</h3>
+                <h4>${item.price || 'N/A'}</h4>
+                <button onclick="removeFromCart(${index})">Remove</button>
+            `;
+            cartItemsContainer.appendChild(itemDiv);
+        });
+    }
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart();
+}
+
+renderCart();
+
+    </script>
+</body>
+
+</html>

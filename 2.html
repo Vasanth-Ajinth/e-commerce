@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+</head>
+
+<body class="tvk">
+    <h1>Product Details</h1>
+    <img id="productImage" width="200">
+    <h3 id="productName"></h3>
+    <h4 id="productPrice"></h4>
+    <button id="actionButton" onclick="sendData()"></button>
+
+
+    <script>
+        const imgSrc = localStorage.getItem('imgSrc');
+        const productName = localStorage.getItem('productName');
+        const price = localStorage.getItem('price');
+        const buttonText = localStorage.getItem('buttonText');
+
+        if (imgSrc && productName && price && buttonText) {
+            document.getElementById('productImage').src = imgSrc;
+            document.getElementById('productName').innerText = productName;
+            document.getElementById('productPrice').innerText = price;
+            document.getElementById('actionButton').innerText = buttonText;
+            function sendData(){
+             
+                window.location.href = 'payment.html';
+
+            }
+        }
+      
+
+    </script>
+    <style>
+        .tvk{
+            align-items:center;
+            text-align: center;
+        }
+        #actionButton{
+            background-color: orange;
+            color: aliceblue;
+            width: 80px;
+            border-radius: 20px;
+            border: none;
+            padding: 10px;
+
+        }
+        .im img{
+
+            max-width: 200px;
+            width: 100px;
+            margin-top: 50px;
+            padding: 50px;
+        }
+    </style>
+   
+    <section class="im">
+        <img src="photos/New folder/download.jpg" alt="">
+        <img src="photos/New folder/images.png" alt="">
+        <img style="width: 200px;" src="photos/New folder/tvk.avif" alt="">
+    </section>
+</body>
+
+</html>
