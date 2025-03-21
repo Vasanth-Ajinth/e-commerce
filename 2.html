@@ -14,17 +14,20 @@
     <h4 id="productPrice"></h4>
     <button id="actionButton" onclick="sendData()"></button>
 
-
     <script>
         const imgSrc = localStorage.getItem('imgSrc');
         const productName = localStorage.getItem('productName');
-        const price = localStorage.getItem('price');
+        // const price = localStorage.getItem('price');
+        const price = parseFloat(localStorage.getItem('price')) || 0;
+
+
         const buttonText = localStorage.getItem('buttonText');
 
         if (imgSrc && productName && price && buttonText) {
             document.getElementById('productImage').src = imgSrc;
             document.getElementById('productName').innerText = productName;
-            document.getElementById('productPrice').innerText = price;
+            // document.getElementById('productPrice').innerText = price;
+            document.getElementById('productPrice').innerText = "₹" + price.toFixed(2);
             document.getElementById('actionButton').innerText = buttonText;
             function sendData(){
              

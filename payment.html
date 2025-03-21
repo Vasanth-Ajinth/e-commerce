@@ -3,106 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Address Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 140vh;
+            background-color: #f8f8f8;
+            font-family: Arial, sans-serif;
+        }
+        .inp {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        .post input {
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid aquamarine;
+            margin: 5px 0;
+        }
+        button {
+            background-color: orange;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: darkorange;
+        }
+        #error-message {
+            color: red;
+            display: none;
+            text-align: center;
+            margin-top: 10px;
+        }
+        input{
+            padding: 5px;
+            border-radius: 10px;
+            outline: none;
+            border: 1px solid red;
+        }
+        .your{
+            color: black;
+        }
+    </style>
 </head>
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    .inp{
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    body{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* height: 100vh; */
-    }
-    form{
-        display: flex;
-        flex-direction: column;
-        
-    }
-    .post input{
-       padding: 5px;
-       width: 400px;
-       border-radius: 10px;
-    border: solid;
-    border-color: aquamarine;
-    }
-</style>
 <body>
 
+<div class="inp">
+    <h1 class="your">Your Address</h1>
+    <form id="myForm"><br>
+        
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
+<br>
+        <label for="dob">DOB</label>
+        <input type="date" id="dob" name="dob" required>
+<br>
+        <label for="number">Number</label>
+        <input type="tel" id="number" name="number" placeholder="Enter Your Mobile Number" required>
+<br>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+<br>
 
-    <div class="inp">
-  <H1 style="text-align: center; font-size: 24px;">Your Address</H1><br>
-   
-  <form action="#" method="post" class="post"  id="myForm">
-   
-    <label for="username">Name</label>
-    <input type="text"  id="username" name="username" placeholder="Enter Your Name">
-    <br>
-    <label for="username">DOB</label>
-    <input type="number" placeholder="Enter your DOB"   id="username" name="username">
-     <br>
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" placeholder="Enter Your Address" required>
+<br>
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" placeholder="Enter Your City" required>
+<br>
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" placeholder="Enter Your State" required>
+<br>
+        <label for="district">District</label>
+        <input type="text" id="district" name="district" placeholder="Enter Your District" required>
+<br>
+        <label for="pincode">Pin Code</label>
+        <input type="text" id="pincode" name="pincode" placeholder="Enter Your Pincode" required>
+<br>
+    
+        <label for="zipcode">Zip Code</label>
+<input type="text" placeholder="Enter Your Zip Code" id="zipcode" name="zipcode">
+<br>
+<label for="phone">Phone number</label>
+<input type="text" placeholder="Enter Your Phone number" id="phone" name="PhoneNumber">
+<br>
 
-    <label for="username">Number</label>
-    <input type="number" placeholder="Enter Your Mobile Number"  id="username" name="username">
-<br>
-    <label for="username">Email</label>
-    <input type="email" placeholder="Enter Your Email"  id="username" name="username">
-<br>
-    <label for="username">Address</label>
-    <input type="text" placeholder="Enter Your Address"  id="username" name="username">
-<br>
-    <label for="username">City</label>
-    <input type="text" placeholder="Enter Your City"  id="username" name="username">
-<br>
-    <label for="username">State</label>
-    <input type="text" placeholder="Enter Your State"  id="username" name="username">
-<br>
-    <label for="username">District</label>
-    <input type="text" placeholder="Enter Your District"  id="username" name="username">
-<br>
-    <label for="username">Pin Code</label>
-    <input type="text" placeholder="Enter Your Pincode"  id="username" name="username"><br><br>
+        <button type="submit">Confirm Order</button>
+    </form>
 
-    <button style="background-color: orange; color: #fff; padding: 5px; border-radius: 10px; border: solid;" onclick="tvk()">Conform Order</button>
+    <p id="error-message">Please complete all input fields!</p>
+</div>
 
-  </form>
-  <p id="error-message" style="color: red; display: none;">Please complete the input box!</p>
-  <script>
-     document.getElementById('myForm').addEventListener('submit', function(event) {
-        event.preventDefault();  // Prevent form submission
+<script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+        event.preventDefault();  // Prevent default form submission
 
         var inputs = document.querySelectorAll('input');
         var errorMessage = document.getElementById('error-message');
         var formValid = true;
 
-        // Loop through all input elements to check if they are filled65
+        // Loop through all input elements to check if they are filled
         inputs.forEach(function(input) {
             if (input.value.trim() === "") {
-                formValid = false;  // Set formValid to false if any input is empty
+                formValid = false;
             }
         });
 
         if (formValid) {
             errorMessage.style.display = "none"; // Hide the error message
-            alert("Your Address Submitted!");
+
+            // Store data in localStorage
+            localStorage.setItem('name', document.getElementById('name').value);
+            localStorage.setItem('dob', document.getElementById('dob').value);
+            localStorage.setItem('number', document.getElementById('number').value);
+            localStorage.setItem('email', document.getElementById('email').value);
+            localStorage.setItem('address', document.getElementById('address').value);
+            localStorage.setItem('city', document.getElementById('city').value);
+            localStorage.setItem('state', document.getElementById('state').value);
+            localStorage.setItem('district', document.getElementById('district').value);
+            localStorage.setItem('pincode', document.getElementById('pincode').value);
+            localStorage.setItem('phone', document.getElementById('phone').value);
+            localStorage.setItem('zipcode', document.getElementById('zipcode').value);
+            alert("Your Address has been Submitted!");
+            window.location.href = 'pay.html'; // Redirect to payment page
         } else {
-            errorMessage.style.display = "block"; // Show the error message
+            errorMessage.style.display = "block"; // Show error message
         }
     });
-    function tvk(){
-        window.location.href = 'pay.html';
-    }
-   
-  </script>
-</div> 
+</script>
+
 </body>
 </html>
