@@ -7,20 +7,31 @@
         <link rel="stylesheet" href="p.css">
         </head>
         <body>
-        <div class="an">
+        <!-- <div class="an"> -->
             
-            <div  class="lo"><img src="SSS.jpg"></div>
-            <a href="cart.html"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f"><path d="M440-600v-120H320v-80h120v-120h80v120h120v80H520v120h-80ZM280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM40-800v-80h131l170 360h280l156-280h91L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68.5-39t-1.5-79l54-98-144-304H40Z"/></svg></a>
+            <!-- <div  class="lo"><img src="SSS.jpg"></div> -->
+           
                
-
-                
+            <nav class="navbar">
+                <!-- <h2 class="logo">Logo</h2> -->
+                <div  class="lo"><img src="SSS.jpg"></div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Product</a></li>
+                    <!-- <li><a href="#">Services</a></li> -->
+                    <li><a href="#">Contact</a></li>
+                    <a href="cart.html"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f"><path d="M440-600v-120H320v-80h120v-120h80v120h120v80H520v120h-80ZM280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM40-800v-80h131l170 360h280l156-280h91L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68.5-39t-1.5-79l54-98-144-304H40Z"/></svg></a>
+                </ul>
+                <div class="hamburger" onclick="toggleMenu()">☰</div>
+            </nav>
+            
                    
-                    <a href="#ins">Condact</a>
-                    <a href="#pro">Product</a>
-                    <a href="">Home</a>
+                    <!-- <a href="#ins">Condact</a> -->
+                    <!-- <a href="#pro">Product</a> -->
+                    <!-- <a href="">Home</a> -->
                       <!-- <button></button> -->
                      
-        </div>
+        <!-- </div> -->
     <div class="im">
         <img class="in" src="photos/logo/headphones-displayed-against-dark-background_157027-4466.avif" alt="">
     </div><br>
@@ -36,7 +47,7 @@
     <section class="ims" id="pro">
         
         <div class="ima" id="bou">
-            <img class="sr" id="productImage"  src="download (1).jpeg" width="200" alt="product 1">
+            <img class="sr" id="productImage"  src="boult1.jpeg" width="200" alt="product 1">
             <h3>Boult Klarity 4 ANC</h3>
             <H4>₹999</H4>
               <!-- <h4>$<span class="pricess">9999</span></h4> -->
@@ -45,8 +56,8 @@
            
         </div>
         <div class="ima">
-            <img id="image" class="sr" src="download.jpeg" width="200" alt="product 1">
-            <h3>Boult ith Zen 50db Hybrid</h3>
+            <img id="image" class="sr" src="boult2.jpeg" width="200" alt="product 1">
+            <h3>Boult ith Zen  <br> 50db Hybrid</h3>
             <H4>₹1299</H4>
             <button  class="bn" onclick="addToCart(this)">Add Cart</button>
 
@@ -54,7 +65,7 @@
         </div>
         <div class="ima">
             <img class="sr" src="download (3).jpeg" alt="product 1">
-            <h3>Boult V 40 With Quad</h3>
+            <h3>Boult V 40 <br> With Quad</h3>
             <H4>₹1199</H4>
             <button  class="bn" onclick="addToCart(this)" >Add Cart</button>
 
@@ -63,16 +74,16 @@
 
 </div>
 </section><br><br>
-<H1 class="h" id="jb">JBL Ear Phones</H1>
+<H1 class="h" id="jb">JBL Ear  Phones</H1>
     <section class="ims">
         
         <div class="ima">
             <img class="sr" src="photos/01 (1).webp" alt="product 1">
             <h3>JBL Tune Beam</h3>
             <H4>₹1599</H4>
-            <button class="btn"  onclick="sendData(this)">Buy</button>
-            <button  class="bn" onclick="addToCart(this)" >Add Cart</button>
             
+            <button  class="bn" onclick="addToCart(this)" >Add Cart</button>
+            <button class="btn"  onclick="sendData(this)">Buy</button>
            
         </div>
         <div class="ima">
@@ -99,7 +110,8 @@
         
         <div class="ima">
             <img class="sr" src="photos/boat/71RFdy6y6LL._AC_UY327_FMwebp_QL65_.webp" alt="product 1">
-            <h3>boAt Nirvana Ion, 120HRS</h3>
+            <h3>boAt Nirvana Ion, <br>
+                 120HRS</h3>
             <H4>₹1399</H4>
             <button class="bn" onclick="addToCart(this)" >Add Cart</button>
 
@@ -107,7 +119,7 @@
         </div>
         <div class="ima">
             <img class="sr" src="photos/boat/141white_300x.avif" alt="product 1">
-            <h3>boAt Nirvana Space, 360º Spatial Audio</h3>
+            <h3>boAt Nirvana Space</h3>
             <H4>₹1599</H4>
             <button class="bn" onclick="addToCart(this)" >Add Cart</button>
 
@@ -115,7 +127,7 @@
         </div>
         <div class="ima">
             <img class="sr" src="photos/boat/AD141-FI_White01_300x.avif" alt="product 1">
-            <h3>boAt Airdopes 121 Pro Plus</h3>
+            <h3>boAt Airdopes <br> 121 Pro</h3>
             <H4>₹1899</H4>  
             <button class="bn" onclick="addToCart(this)" >Add Cart</button>
 
@@ -167,7 +179,7 @@
         </div>
         <div class="ima">
             <img class="sr" src="photos/noise/realme/61kDfm8FD7L._AC_UL480_FMwebp_QL65_.webp" alt="product 1">
-            <h3>realme Buds Wireless 5 ANC</h3>
+            <h3>realme Buds Wireless 5 </h3>
             <H4>₹1299</H4>
             <button class="bn" onclick="addToCart(this)" >Add Cart</button>
 
@@ -189,7 +201,7 @@
         
         <div class="ima">
             <img class="sr" src="photos/noise/apple/airpods-4-anc-select-202409.jpeg" alt="product 1">
-            <h3>AirPods 4 with Active Noise Cancellation</h3>
+            <h3>AirPods 4 with Active </h3>
             <H4>₹12900.00 </H4>
             <button class="bn" onclick="addToCart(this)" >Add Cart</button>
 
@@ -197,7 +209,7 @@
         </div>
         <div class="ima">
             <img class="sr" src="photos/noise/apple/airpods-4-select-202409.jpeg" alt="product 1">
-            <h3>AirPods 4</h3>
+            <h3>AirPods <br> 4</h3>
             <H4>₹7900.00</H4>
             <button class="bn" onclick="addToCart(this)" >Add Cart</button>
 
