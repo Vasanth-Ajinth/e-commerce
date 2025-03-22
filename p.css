@@ -22,7 +22,7 @@
 /* Responsive for small screens */
 @media (max-width: 600px) {
     .log img {
-        width: 80px; /* Reduce size for smaller screens */
+        width: 70px; /* Reduce size for smaller screens */
         height: auto; /* Maintain aspect ratio */
     }
 }
@@ -163,6 +163,57 @@ transition: 1s;
  
   
 }
+/* 📌 Default Layout (Windows / Desktop) */
+.ims {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between items */
+}
+
+.ima {
+    width: calc(33.33% - 20px); /* 3 items per row on large screens */
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.ima:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* 📌 Responsive Image Settings */
+.sr {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* 🌟 Responsive for Tablets (Medium Screens) */
+@media (max-width: 768px) {
+    .ima {
+        width: calc(50% - 20px); /* 2 items per row */
+    }
+}
+
+/* 📱 Responsive for Phones (Small Screens) */
+@media (max-width: 480px) {
+    .ima {
+        width: 100%; /* 1 item per row */
+    }
+
+    h1.h {
+        font-size: 18px; /* Smaller font size for mobile */
+    }
+
+    .bn, .btn {
+        padding: 8px 15px; /* Adjust button size */
+        font-size: 14px;
+    }
+}
+
 
 .ima{
     text-align: center;

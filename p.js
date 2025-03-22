@@ -1,3 +1,8 @@
+function toggleMenu() {
+    var menu = document.getElementById("navLinks");
+    menu.classList.toggle("active");
+}
+
 function sendData(btn) {
     const productDiv = btn.closest('.ima'); // Get the product div
     const imgSrc = productDiv.querySelector('img').getAttribute('src'); // Image source
@@ -22,5 +27,5 @@ const price = productDiv.querySelector('H4').innerText.trim().replace(/[^0-9.]/g
     // Redirect to the next page
     window.location.href = '2.html';
 
-
+   
 }
