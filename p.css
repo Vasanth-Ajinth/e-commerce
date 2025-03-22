@@ -22,7 +22,7 @@
 /* Responsive for small screens */
 @media (max-width: 600px) {
     .log img {
-        width: 70px; /* Reduce size for smaller screens */
+        width: 60px; /* Reduce size for smaller screens */
         height: auto; /* Maintain aspect ratio */
     }
 }
@@ -78,25 +78,46 @@ body {
 }
 
 /* Responsive Design */
-@media screen and (max-width: 768px) {
-    .nav-links {
-        display: none; /* Hide menu initially */
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background: #222;
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
+/* Default: 3 items per row */
+.ims {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.ima {
+    width: calc(33.33% - 10px); /* 3 items per row */
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Tablet view: 3 items per row */
+@media (max-width: 768px) {
+    .ima {
+        width: calc(33.33% - 10px); /* 3 items per row on tablets too */
+    }
+}
+
+/* Mobile view: 3 items per row */
+@media (max-width: 300px) {
+    .ima {
+        width: calc(33.33% - 10px); /* 3 items per row */
     }
 
-    .nav-links.active {
-        display: flex; /* Show menu when activated */
+    .sr {
+        width: 90%; /* Adjust image size */
+        max-width: 100px;
     }
 
-    .hamburger {
-        display: block; /* Show hamburger icon */
+    h3 {
+        font-size: 12px;
+    }
+
+    .bn, .btn {
+        font-size: 10px;
+        padding: 4px 8px;
     }
 }
 
@@ -174,7 +195,7 @@ transition: 1s;
 .ima {
     width: calc(33.33% - 20px); /* 3 items per row on large screens */
     text-align: center;
-    padding: 15px;
+    padding:px;
     border: 1px solid #ddd;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out;
@@ -191,28 +212,44 @@ transition: 1s;
     border-radius: 10px;
 }
 
-/* 🌟 Responsive for Tablets (Medium Screens) */
-@media (max-width: 768px) {
-    .ima {
-        width: calc(50% - 20px); /* 2 items per row */
-    }
+/* 🌟 Default Layout (Large Screens) */
+.ims {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
-/* 📱 Responsive for Phones (Small Screens) */
+.ima {
+    width: calc(33.33% - 20px); /* 3 items per row on large screens */
+    text-align: center;
+    padding: px;
+}
+
+
+
+/* 📱 Mobile View (1 item per row) */
 @media (max-width: 480px) {
     .ima {
-        width: 100%; /* 1 item per row */
+        width: 100%; /* Full width */
     }
 
-    h1.h {
-        font-size: 18px; /* Smaller font size for mobile */
+    .sr {
+        max-width: 100%; /* Ensure image scales properly */
+        height: auto;
+    }
+
+    h3 {
+        font-size: 16px; /* Adjust title size */
     }
 
     .bn, .btn {
-        padding: 8px 15px; /* Adjust button size */
+        padding: 8px 12px; /* Adjust button size */
         font-size: 14px;
     }
 }
+
+
 
 
 .ima{
@@ -226,14 +263,15 @@ transition: 1s;
 .ima h4{
     padding: 10px;
 
+
 }
 .ima button{
     width: 80px;
     padding: 5px;
 }
 .ima img{
-    max-width:100PX;
-    height:100PX;
+    max-width:50PX;
+    height:80PX;
     padding: 0px;
     align-items: center;
     
@@ -246,7 +284,7 @@ transition: 1s;
 }
 
 .ima {
-    padding: 10px; /* Adds space inside each item */
+    padding: 0px; /* Adds space inside each item */
     margin: 10px; /* Adds space outside each item */
     text-align: center; /* Centers text below the images */
 }
@@ -268,7 +306,7 @@ transition: 1s;
 }
 h3 {
     margin-top: 10px;
-    font-size: 14px; /* Adjust the size as needed */
+    font-size: 10px; /* Adjust the size as needed */
     font-weight: normal; /* Optional: Make it lighter */
     line-height: 1.2; /* Improve readability */
     color: #000; /* Ensure visibility */
@@ -302,8 +340,8 @@ h3 {
     margin-bottom: 5px;
 }
 #bt{
-    padding: 5px;
-    width: 90px;
+    padding: px;
+    width: 20px;
     border-radius: 10px;
     background-color: aqua;
     border: none;
